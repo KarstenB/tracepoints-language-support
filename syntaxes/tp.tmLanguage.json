@@ -1,0 +1,71 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "tracepoints",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#storage_types"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#loglevel"
+		},
+		{
+			"include": "#arrays"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.tp",
+				"match": "\\b(context|event|hex|const|timed_(d|h|ms|us|ns|c|m|s))\\b"
+			}]
+		},
+		"storage_types": {
+			"name": "types.storage.tp",
+			"patterns": [
+				{
+					"name": "storage.type.built-in.tp",
+					"match": "\\b(u?int(8|16|32|64)_t|char|float|double|void|string|bool)\\b"
+				}
+			]
+		},
+		"comments" : {
+			"name": "comment.line.double-slash.documentation.tp",
+			"patterns": [
+				{
+					"name":"comment.line.tp",
+					"match": "#.*$\n?"
+				}
+			]
+		},
+		"loglevel" :{
+			"name":"storage.modifier.tp",
+			"patterns": [{
+				"name":"storage.modifier.tp",
+				"match": "\\b(notice|info|debug)\\b"
+			},
+			{
+				"name":"storage.modifier.tp, strong.tp",
+				"match": "\\b(fatal|error)\\b"
+			},
+			{
+				"name":"storage.modifier.tp, emphasis.tp",
+				"match": "\\b(warning)\\b"
+			}
+		]
+		},
+		"arrays" :{
+			"name":"constant.numeric.tp",
+			"patterns": [{
+				"name":"constant.numeric.tp",
+				"match": "\\[\\s*\\d+\\s*\\]"
+			}]
+		}
+	},
+	"scopeName": "source.tp"
+}

@@ -1,0 +1,112 @@
+info context context_full_plain(string name) {
+  info event simple_uint8_t(uint8_t uint8)
+  info event simple_uint16_t(uint16_t uint16)
+  info event simple_uint32_t(uint32_t uint32)
+  info event simple_uint64_t(uint64_t uint64)
+  info event simple_int8_t(int8_t int8)
+  info event simple_int16_t(int16_t int16)
+  info event simple_int32_t(int32_t int32)
+  info event simple_int64_t(int64_t int64)
+  info event simple_char(char c)
+  info event simple_string(string str)
+  info event simple_bool(bool b)
+  info event simple_float(float b)
+  info event simple_double(double b)
+}
+
+timed_ns fatal context context_full_array(hex uint64_t ctx_uint64, string ctx_str, double[3] ctx_d, void* ctx_ptr) {
+  info event simple_uint8_t(uint8_t[16] uint8)
+  info event simple_uint16_t(uint16_t[16] uint16)
+  info event simple_uint32_t(uint32_t[16] uint32)
+  info event simple_uint64_t(uint64_t[16] uint64)
+  info event simple_int8_t(int8_t[16] int8)
+  info event simple_int16_t(int16_t[16] int16)
+  info event simple_int32_t(int32_t[16] int32)
+  info event simple_int64_t(int64_t[16] int64)
+  info event simple_char(char[16] c)
+# Arrays of string are not supported
+# info event simple_string(string[16] str)
+  info event simple_bool(bool[16] b)
+  info event simple_float(float[16] b)
+  info event simple_double(double[16] b)
+}
+
+timed_d error context context_full_pointer(hex uint64_t ctx_uint64, string ctx_str, double[3] ctx_d, void* ctx_ptr) {
+  info event simple_uint8_t(uint8_t* uint8)
+  info event simple_uint16_t(uint16_t* uint16)
+  info event simple_uint32_t(uint32_t* uint32)
+  info event simple_uint64_t(uint64_t* uint64)
+  info event simple_int8_t(int8_t* int8)
+  info event simple_int16_t(int16_t* int16)
+  info event simple_int32_t(int32_t* int32)
+  info event simple_int64_t(int64_t* int64)
+  info event simple_char(char* c)
+  # Pointers to string are not supported
+  # info event simple_string(string* str)
+  info event simple_bool(bool* b)
+  info event simple_float(float* b)
+  info event simple_double(double* b)
+}
+
+warning context context_full_const_plain(hex uint64_t ctx_uint64, string ctx_str, double[3] ctx_d, void* ctx_ptr) {
+  info event simple_uint8_t(const uint8_t uint8)
+  info event simple_uint16_t(const uint16_t uint16)
+  info event simple_uint32_t(const uint32_t uint32)
+  info event simple_uint64_t(const uint64_t uint64)
+  info event simple_int8_t(const int8_t int8)
+  info event simple_int16_t(const int16_t int16)
+  info event simple_int32_t(const int32_t int32)
+  info event simple_int64_t(const int64_t int64)
+  info event simple_char(const char c)
+  info event simple_string(const string str)
+  info event simple_bool(const bool b)
+  info event simple_float(const float b)
+  info event simple_double(const double b)
+}
+
+notice context context_full_const_array(hex uint64_t ctx_uint64, string ctx_str, double[3] ctx_d, void* ctx_ptr) {
+  info event simple_uint8_t(const uint8_t[16] uint8)
+  info event simple_uint16_t(const uint16_t[16] uint16)
+  info event simple_uint32_t(const uint32_t[16] uint32)
+  info event simple_uint64_t(const uint64_t[16] uint64)
+  info event simple_int8_t(const int8_t[16] int8)
+  info event simple_int16_t(const int16_t[16] int16)
+  info event simple_int32_t(const int32_t[16] int32)
+  info event simple_int64_t(const int64_t[16] int64)
+  info event simple_char(const char[16] c)
+  # Arrays of string are not supported
+  # info event simple_string(const string[16] str)
+  info event simple_bool(const bool[16] b)
+  info event simple_float(const float[16] b)
+  info event simple_double(const double[16] b)
+}
+
+context context_full_const_pointer(hex uint64_t ctx_uint64, string ctx_str, double[3] ctx_d, void* ctx_ptr) {
+  info event simple_uint8_t(const uint8_t* uint8)
+  info event simple_uint16_t(const uint16_t* uint16)
+  info event simple_uint32_t(const uint32_t* uint32)
+  info event simple_uint64_t(const uint64_t* uint64)
+  info event simple_int8_t(const int8_t* int8)
+  info event simple_int16_t(const int16_t* int16)
+  info event simple_int32_t(const int32_t* int32)
+  info event simple_int64_t(const int64_t* int64)
+  info event simple_char(const char* c)
+  # Pointers to string are not supported
+  # info event simple_string(const string* str)
+  info event simple_bool(const bool* b)
+  info event simple_float(const float* b)
+  info event simple_double(const double* b)
+}
+
+info context context_full_const_char_ptr(const char* desc) {}
+
+timed_ms info context TimedTest {
+  timed_d info event TimedDays()
+  timed_h info event TimedHours()
+  timed_ms info event TimedMillis()
+  timed_us info event TimedMicros()
+  timed_ns info event TimedNanos()
+  timed_c info event TimedCycles()
+  timed_m info event TimedMinutes()
+  timed_s info event TimedSeconds()
+}

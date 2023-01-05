@@ -1,0 +1,37 @@
+{
+  "name": "tracepoints-language-support",
+  "displayName": "Tracepoints language support",
+  "description": "Support for tracepoints",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "tp",
+        "aliases": [
+          "tracepoints",
+          "tp"
+        ],
+        "extensions": [
+          ".tp"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "tp",
+        "scopeName": "source.tp",
+        "path": "./syntaxes/tp.tmLanguage.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}
